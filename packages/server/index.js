@@ -7,9 +7,9 @@ app.get('/', (req, res) => {
 });
 
 // Another route that accepts a name parameter and responds with a greeting
-app.get('/greet/:name', (req, res) => {
-  const { name } = req.params;
-  res.send(`Hello, ${name}!`);
+app.get('/auth/verify', (req, res) => {
+ const { userId } = req.body;
+ res.send(`Welcome to the app, ${userId}!`);
 });
 
 app.listen(port, () => {

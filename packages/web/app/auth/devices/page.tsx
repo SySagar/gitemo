@@ -61,17 +61,62 @@ export default function Page() {
     code: string | null;
     redirect: string | null;
   }) {
+    
+    setLoading(true);
+    try {
+      const req  = await fetch("/auth/verify", {
+        method: "POST",
+        body: JSON.stringify(opts),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
+      if (!req.ok) {
+        throw new Error(`HTTP error! status: ${req.status}`);
+      }
+  
+      const res = await req.json();
+      
+      try {
+        const redirectURL = new URL(res.redirect);
+        redirectURL.searchParams.append("code", res.code);
+        redirectURL.searchParams.append("key", res.key);
+
+        await fetch(redirectURL.toString());
+
+        setLoading(false);
         setSuccess(true);
+      } catch (error) {
+        console.error(error);
+        setLoading(false);
+        toast.error("Error redirecting back to local CLI. Is your CLI running?");
+      }
+    
+    } catch (error) {
+      setLoading(false);
+      toast.error("Error creating API key.");
+    }
     
   }
 
   async function cancel() {
-    toast.error("Cancelling");
-    setCancelled(true);
+    try {
+      setLoading(true);
+      const redirectUrl = new URL(_redirect as string);
+      redirectUrl.searchParams.append("cancelled", "true");
+      console.log("redirect",redirectUrl.toString());
+      await fetch(redirectUrl.toString());
+      setLoading(false);
+      setCancelled(true);
+    } catch (_error) {
+      setLoading(false);
+      toast.error("Error cancelling login. Is your local CLI running?");
+    }
   }
 
   const { user } = useUser();
+  console.log(user);
 
   if (!code || !_redirect) {
     return notFound();
@@ -86,6 +131,11 @@ export default function Page() {
   if (success) {
     return <Success />;
   }
+
+
+  // if (!user) {
+  //  redirect("/auth/sign-in");
+  // }
 
   return (
     <div className="w-full min-h-screen flex items-center pt-[250px] px-4 flex-col bg-black">
