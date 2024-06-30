@@ -1,7 +1,7 @@
 "use client";
 
-import { notFound, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { notFound, redirect, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 import { CheckCircle, Fingerprint, Loader2, PartyPopper, XCircle } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
@@ -116,7 +116,7 @@ export default function Page() {
   }
 
   const { user } = useUser();
-  console.log(user);
+  console.log("user",user);
 
   if (!code || !_redirect) {
     return notFound();
