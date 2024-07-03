@@ -1,6 +1,18 @@
 {
-    "private":"true",
+    "name": "gitemo",
+    "private": "true",
+    "scripts": {
+        "dev": "npm-run-all --parallel dev:*",
+        "dev:server": "yarn workspace web dev",
+        "dev:client": "yarn workspace server dev"
+    
+    },
     "workspaces": [
-        "packages/*"
-    ]
+        "packages/*",
+        "server",
+        "web"
+    ],
+    "devDependencies": {
+        "npm-run-all": "^4.1.5"
+    }
 }

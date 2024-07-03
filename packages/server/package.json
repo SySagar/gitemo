@@ -1,5 +1,5 @@
 {
-  "name": "@gitemo/server",
+  "name": "server",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "mongodb": "^6.8.0"
+    "mongodb": "^6.8.0",
+    "nanoid": "^5.0.7"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"

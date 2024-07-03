@@ -1,4 +1,5 @@
 import express from 'express';
+import {customAlphabet} from 'nanoid';
 const app = express();
 const port = 5000; 
 
@@ -6,10 +7,17 @@ app.get('/', (req, res) => {
   res.send('Server is up and running!');
 });
 
-// Another route that accepts a name parameter and responds with a greeting
-app.get('/auth/verify', (req, res) => {
+app.get('/userKey', (req, res) => {
  const { userId } = req.body;
- res.send(`Welcome to the app, ${userId}!`);
+
+  const nanoid = customAlphabet('1234567890abcdef', 10);
+
+  const userKey = userId + nanoid();
+
+  res.send({
+    status: 'success',
+    userKey,
+  });
 });
 
 app.listen(port, () => {
