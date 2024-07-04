@@ -64,7 +64,7 @@ export default function Page() {
     
     setLoading(true);
     try {
-      const req  = await fetch("/auth/verify", {
+      const req  = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/key`, {
         method: "POST",
         body: JSON.stringify(opts),
         headers: {
