@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center pl-24 pr-24 pt-14 bg-[#FDE5D0] overflow-hidden">
+    <main className="flex min-h-screen flex-col items-center pl-24 pr-24 pt-10 bg-[#FDE5D0] overflow-hidden">
       <Image className="rotate" src="/logo.png" width={270} height={270} alt="image" />
     <div className="flex flex-col justify-center items-center gap-6 mt-12  overflow-hidden">
     <h2 className="text-orange-600 font-bold text-m md:tsxt-md lg:text-lg">
@@ -24,7 +24,8 @@ export default function Home() {
 
     </div>
    
-    <h2 className="text-gray-600 font-normal text-sm">
+    <h2 className="text-gray-600 font-normal text-sm text-center">
+      Your can read the usage documentation <a target="_blank" href="https://github.com/SySagar/gitemo-cli?tab=readme-ov-file#gitemo-cli" style={{color:'blue'}}>here</a><br />
       Please remember to leave a star on the GitHub repository if you find this project useful.
     </h2>
       </div>
