@@ -30,19 +30,17 @@ const Wrapper = ({ children }:any) => {
         display: "flex",
         justifyContent: "start",
         alignItems: "center",
-        gap: "2px",
+        gap: "8px",
       }}
     >
       {React.cloneElement(children)}
       <button
       onClick={copyToClipboard}
-      className="flex justify-center items-center "
+      className="ibutton flex justify-center items-center bg-[#D9D9D9] "
         style={{
-          height: "55px",
+          height: "45px",
           width: "40px",
           borderRadius: "5px 5px 5px 5px",
-          color: "#fff",
-          background: "#1D1F21",
         }}
         title="Copy"
       >

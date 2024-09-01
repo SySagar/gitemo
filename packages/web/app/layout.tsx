@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Kumbh_Sans } from "next/font/google";
 import "./globals.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
 
-const inter = Inter({ subsets: ["latin"] });
+const cfont = Kumbh_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Gitemo",
@@ -28,7 +28,7 @@ export default function RootLayout({
   sizes="<generated>"
 />
         </head>
-        <body className={inter.className}>{children}</body>
+        <body className={cfont.className}>{children}</body>
       </html>
     </ClerkProvider>
   );

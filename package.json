@@ -5,7 +5,6 @@
         "dev": "npm-run-all --parallel dev:*",
         "dev:server": "yarn workspace web dev",
         "dev:client": "yarn workspace server dev"
-    
     },
     "workspaces": [
         "packages/*",
@@ -14,5 +13,8 @@
     ],
     "devDependencies": {
         "npm-run-all": "^4.1.5"
+    },
+    "dependencies": {
+        "react-icons": "^5.3.0"
     }
 }
