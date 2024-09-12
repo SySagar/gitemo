@@ -36,7 +36,7 @@ const Wrapper = ({ children }:any) => {
       {React.cloneElement(children)}
       <button
       onClick={copyToClipboard}
-      className="ibutton flex justify-center items-center bg-[#D9D9D9] "
+      className="ibutton flex justify-center items-center bg-white "
         style={{
           height: "45px",
           width: "40px",
