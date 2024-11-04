@@ -50,7 +50,7 @@ export default function Home() {
       <div className="absolute bottom-1 sm:bottom-3 w-11/12 md:w-5/6  flex flex-col py-3 pt-1 gap-2 justify-center items-center">
       <div className="divider flex w-10/12 mt-2 md:mt-20"></div>
       <p className="text-[11px] sm:text-sm text-slate-200 text-opacity-40 text-nowrap py-3">
-      Gitemo @{moment().format('YYYY')}
+      Gitemo @{moment().format('YYYY')} | <a href="https://x.com/SySagar2" target="_blank" className="text-[#1da1f2]">Twitter</a> |     <a href="https://cal.com/sy-sagar/quick-chat" target="_blank" className=" text-white text-sm">Hire me</a>
       </p>
       </div>
     </main>
