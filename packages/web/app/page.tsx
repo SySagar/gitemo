@@ -6,6 +6,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center pl-24 pr-24 justify-center bg-[#08090A]  overflow-hidden">
+      
+      <a href="https://peerlist.io/sysagar/project/gitemocli" target="_blank"  className=" -translate-y-12 z-30">
+      <img src="launch.svg" alt="Peerlist" />
+      </a>
       <div className="relative -translate-y-6 sm:-translate-y-0">
       <p className="text-[#B2F6FF] text-[10px] sm:text-[12px] lg:text-sm relative bottom-5 sm:bottom-4 lg:bottom-3 left-24 sm:left-28 lg:left-44">
         Lets make good commits!
